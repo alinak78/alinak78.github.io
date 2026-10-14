@@ -18,6 +18,63 @@
 				height: auto;
 				object-fit: cover;
 			}
+			.site-menu {
+				position: relative;
+				margin-left: auto;
+				margin-right: 1.5em;
+			}
+			.site-menu-toggle {
+				align-items: center;
+				background: transparent;
+				border: 0;
+				box-shadow: none;
+				color: #3d4449;
+				cursor: pointer;
+				display: inline-flex;
+				font-size: 1.15em;
+				height: 2.75em;
+				justify-content: center;
+				padding: 0;
+				width: 2.75em;
+			}
+			.site-menu-toggle:hover {
+				color: #f56a6a;
+			}
+			.site-menu-links {
+				background: #ffffff;
+				border: solid 1px rgba(210, 215, 217, 0.75);
+				border-radius: 6px;
+				box-shadow: 0 0.75em 2em rgba(0, 0, 0, 0.08);
+				display: none;
+				list-style: none;
+				margin: 0;
+				min-width: 12em;
+				padding: 0.5em 0;
+				position: absolute;
+				right: 0;
+				top: 100%;
+				z-index: 10;
+			}
+			.site-menu.open .site-menu-links {
+				display: block;
+			}
+			.site-menu-links a {
+				border-bottom: 0;
+				color: #3d4449;
+				display: block;
+				font-family: "Roboto Slab", serif;
+				font-size: 0.85em;
+				padding: 0.65em 1em;
+				text-transform: uppercase;
+			}
+			.site-menu-links a:hover {
+				color: #f56a6a;
+			}
+			@media screen and (max-width: 736px) {
+				.site-menu {
+					margin-right: 0.75em;
+				}
+			}
 	</style>
 	</head>
 	<body class="is-preload" style="font-size: 110%;">
@@ -32,6 +89,15 @@
 							<!-- Header -->
 								<header id="header">
 									<a href="index.html" class="logo"><strong>Alina Kapanova</strong></a>
+									<nav class="site-menu" aria-label="Primary navigation">
+										<button class="site-menu-toggle icon solid fa-bars" type="button" aria-expanded="false" aria-controls="site-menu-links">
+											<span class="label">Menu</span>
+										</button>
+										<ul class="site-menu-links" id="site-menu-links">
+											<li><a href="#cv">CV</a></li>
+											<li><a href="#art-hobbies">Art &amp; Hobbies</a></li>
+										</ul>
+									</nav>
 									<ul class="icons">
 										<li><a href="https://github.com/alinak78" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 										<li><a href="https://https://www.linkedin.com/in/alina-kapan/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
@@ -59,7 +125,7 @@
 								</section>
 
 							<!-- CV -->
-								<section>
+								<section id="cv">
 									<header class="major">
 										<h2>CV</h2>
 									</header>
@@ -189,7 +255,7 @@
 </section>
 
 
-								<section>
+								<section id="art-hobbies">
 									<header class="major">
 										<h2>Art &amp; Hobbies</h2>
 									</header>
@@ -233,6 +299,39 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+			<script>
+				(function() {
+					var menu = document.querySelector('.site-menu');
+					var toggle = document.querySelector('.site-menu-toggle');
+					var links = document.querySelectorAll('.site-menu-links a');
+
+					if (!menu || !toggle) return;
+
+					function setOpen(isOpen) {
+						menu.classList.toggle('open', isOpen);
+						toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+					}
+
+					toggle.addEventListener('click', function(event) {
+						event.stopPropagation();
+						setOpen(!menu.classList.contains('open'));
+					});
+
+					links.forEach(function(link) {
+						link.addEventListener('click', function() {
+							setOpen(false);
+						});
+					});
+
+					document.addEventListener('click', function(event) {
+						if (!menu.contains(event.target)) setOpen(false);
+					});
+
+					document.addEventListener('keydown', function(event) {
+						if (event.key === 'Escape') setOpen(false);
+					});
+				})();
+			</script>
 			
 
 	</body>
