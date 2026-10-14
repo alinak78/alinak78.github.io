@@ -73,6 +73,15 @@
 			.site-menu-links a:hover {
 				color: #f56a6a;
 			}
+			.scholar-icon img {
+				filter: grayscale(1) brightness(0.7) contrast(1000);
+				width: 1.5em;
+				height: 1.5em;
+				vertical-align: -0.3em;
+			}
+			#publications .publication-topic {
+				color: #b84343;
+			}
 			header.section-title-large h2 {
 				font-size: 2.75em;
 			}
@@ -101,6 +110,7 @@
 									<ul class="icons">
 										<li><a href="https://github.com/alinak78" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 										<li><a href="https://www.linkedin.com/in/a-kapan/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://scholar.google.com/citations?user=kFugk7QAAAAJ&amp;hl=en" class="icon scholar-icon" aria-label="Google Scholar"><img src="images/google-scholar.png" alt="" width="20" height="20"><span class="label">Google Scholar</span></a></li>
 									<li><a href="https://www.instagram.com/destiny67a/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 									</ul>
 									<nav class="site-menu" aria-label="Primary navigation">
@@ -187,6 +197,34 @@
 
 								</section>
 
+							<!-- Publications -->
+								<section id="publications" aria-labelledby="publications-heading">
+									<header class="major">
+										<h2 id="publications-heading">Publications</h2>
+									</header>
+									<article>
+										<h3><a href="https://openreview.net/forum?id=2hoq4EUdbP">Cross Lingual Transfer in Tulu Legal Comprehension: Script-Dependent Improvement and RAG-Induced Knowledge Conflict</a></h3>
+										<p>2026 | Accepted to an EMNLP 2026 workshop<br>
+										Topics: <strong class="publication-topic">Machine Learning</strong> &middot; Natural Language Processing &middot; Cross-lingual Transfer &middot; Low-resource Languages &middot; Retrieval-Augmented Generation<br>
+										Evaluates how large language models classify legal complaints in Tulu, a low-resource Dravidian language. Finds that transliteration through related scripts, especially Kannada, improves comprehension, while retrieval from Kannada legal documents produces mixed results. Analyzes fact substitution and hallucinations to better understand failures in multilingual retrieval-augmented generation (RAG).<br>
+										<a href="https://openreview.net/forum?id=2hoq4EUdbP">Read paper on OpenReview</a></p>
+									</article>
+									<article>
+										<h3><a href="https://arxiv.org/abs/2608.00107">MetaRoute-Bench: Evaluating Meta-Decision Policies for Agentic Workflow Routing</a></h3>
+										<p>2026 | arXiv preprint; submitted to AAAI 2027<br>
+										Topics: <strong class="publication-topic">Machine Learning</strong> &middot; Agentic AI &middot; Multi-agent Systems &middot; Workflow Routing &middot; Benchmarking<br>
+										Introduces a reproducible framework for comparing how AI agents choose tools, delegate tasks, verify results, and recover from failures. Evaluates eight routing policies across 180 synthetic task profiles and 43,200 offline traces, measuring tradeoffs in task success, cost, and latency. A task-aware compositional policy achieves 79.4% success versus 76.7% for a strong static policy, with modest increases in cost and latency.<br>
+										<a href="https://arxiv.org/abs/2608.00107">Read paper on arXiv</a></p>
+									</article>
+									<article>
+										<h3><a href="https://ceur-ws.org/Vol-3232/paper27.pdf">Fine-Tuning NER with spaCy for Transliterated Entities Found in Digital Collections From the Multilingual Persian Gulf</a></h3>
+										<p>2022 | Digital Humanities in the Nordic and Baltic Countries (DHNB 2022), Uppsala, Sweden | CEUR Workshop Proceedings, pp. 288–296<br>
+										Topics: <strong class="publication-topic">Machine Learning</strong> &middot; Natural Language Processing &middot; Named Entity Recognition &middot; Digital Humanities<br>
+										Develops custom spaCy-based named entity recognition models for historical Persian Gulf collections, addressing gaps in standard models trained on English-language media. Uses domain-specific annotated data and expanded entity labels to identify people, places, and tribes, including names transliterated from Arabic and Farsi. Compares blank, pretrained, and merged models to support more inclusive analysis of multilingual historical archives.<br>
+										<a href="https://ceur-ws.org/Vol-3232/paper27.pdf">Read paper (PDF)</a> &middot; <a href="https://archive.nyu.edu/handle/2451/63943">NYU archive</a></p>
+									</article>
+								</section>
+
 							<!-- Projects -->
 								<section>
 									<header class="major">
@@ -223,6 +261,8 @@
 			
 							</section>
 
+
+
 							<!-- Extracurricular Activities -->
 								<section>
 									<header class="major">
@@ -234,6 +274,8 @@
 									<p><strong>Treasurer of Cornell's KZ club</strong>, Cornell University (08/2024 - 11/2024)<br> Organized speaker events with Kazakh engineers from Amazon, Meta, and other cultural events.<br>Reference letter: <a href="documents/kazakh-club-reference.pdf">documents/kazakh-club-reference.pdf</a></p>
 									<p><strong>Learning Assistant (Teaching Assistant)</strong>, NYU Shanghai (01/2021 - 05/2021)<br>- Supported course "Introduction to Macroeconomics" (in English) taught by A. Stojanovic, answered students' questions about course content, homeworks, organized exam review sessions, worked with faculty to support student learning experience.</p>
 								</section>
+
+
 
 								<section></section>
 									<header class="major">
